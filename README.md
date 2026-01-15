@@ -83,15 +83,17 @@ spring.datasource.password=your_password
 For production deployment, configure the following environment variables:
 
 - `ADMIN_USERNAME`: Admin login username (default: admin)
-- `ADMIN_PASSWORD`: Admin login password (default: admin123)
+- `ADMIN_PASSWORD`: Admin login password (default: admin123) **⚠️ MUST be changed in production!**
 - `SPRING_DATASOURCE_URL`: Database connection URL
 - `SPRING_DATASOURCE_USERNAME`: Database username
 - `SPRING_DATASOURCE_PASSWORD`: Database password
 
+**Security Warning**: The default credentials (admin/admin123) are for development only. Always set strong, unique credentials via environment variables in production:
+
 Example:
 ```bash
 export ADMIN_USERNAME=myusername
-export ADMIN_PASSWORD=securepassword123
+export ADMIN_PASSWORD='YourStr0ng&SecureP@ssw0rd!'
 ```
 
 ### File Upload Limits
@@ -100,7 +102,8 @@ Maximum file size: 5MB (configurable in `application.properties`)
 
 ## Usage
 
-1. **Login**: Use the credentials (default: admin/admin123)
+1. **Login**: Use the credentials (default for development: admin/admin123)
+   - ⚠️ **Change these credentials immediately in production!**
 2. **Upload Resume**: Select a PDF, DOC, or DOCX resume file
 3. **Enter Job Description**: Paste the job requirements including required skills
 4. **View Results**: See the match percentage and candidate details
